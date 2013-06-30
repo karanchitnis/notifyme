@@ -1,4 +1,4 @@
-Clipflix
+analyticsja
 ===========
 
-Share, track, and create playlists of your favorite digital content.
+Using Natural Language Processing (NLP) to create a smarter notepad and recommendations engine.
