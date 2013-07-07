@@ -263,15 +263,58 @@ aside {
 user-select: none;
 }
 
-.posts {
+#wall {
+  border:3px solid red;
+  width: 66.66666666666666%;
+  height: 2000px;
+  position: relative;
+  -webkit-user-select: none; /* Chrome/Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: none;
+  user-select: none; 
+}
+
+.no-contact-info {
+    width: 400px;
+}
+
+.post {
   position: absolute;
-  resize: both;
-  min-width:0px; 
-  min-height:0px;
+  border:1px solid black;
+}
+
+.edit {
+  border:1px solid red;
+  position: relative;
+  width: 0px;
+  min-width: 100px;
+  min-height: 30px;
+}
+
+.content {
+  border:1px solid green;
+  padding:5px 5px;
+  position: relative;
+  width: 0px;
+  min-width: 100px;
+  min-height: 30px;
+  resize:both;
+  overflow: hidden;
+}
+
+.accessor {
+  border:1px solid blue;
+  position: relative;
+  width: 0px;
+  min-width: 100px;
+  min-height: 30px;
 }
 
 .span8 {
-  border:3px solid green;
+  border:2px solid green;
 
 }
 
