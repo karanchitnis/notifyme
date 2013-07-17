@@ -16,3 +16,5 @@
 //= require bootstrap
 //= require_tree .
 //= require jquery.autogrow-textarea
+//= require fancybox-source/jquery.fancybox.pack
+//= require fancybox-lib/jquery.mousewheel-3.0.6.pack
