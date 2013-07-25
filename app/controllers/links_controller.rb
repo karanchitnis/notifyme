@@ -12,7 +12,6 @@ class LinksController < ApplicationController
       @embed_type = obj[0].type
       if @embed_type == "video"
         @embed_format = obj[0].html[1..6]
-        #@embed_provider = obj[0].provider_name
         linkhref = obj[0].html.split("src=")[1]
         @embed_link = linkhref[1..linkhref.length].split(' ')[0].split('<')[0]
       end

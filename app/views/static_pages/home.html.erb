@@ -1,24 +1,7 @@
 </div>
 
 <% if signed_in? %>
-  <div class="row-fluid no-space">
-    <div class="pad">
-      <div class="span1">
-        <!--<a class="fancybox" href="/assets/rails.png"> <%#= image_tag("rails.png") %> </a>-->
-        
-        <%= render 'shared/user_info' %>
-        <%= render 'shared/stats' %>
-        <%= button_tag "B", :class => "bold" %>
-        <%= button_tag "I", :class => "italic" %>
-        <%= button_tag "U", :class => "underline" %>
-        <%= button_tag "Add Post", :id => "addPost" %>
-      </div>
-    </div>
-      <div class="span8" id="wall">
-        <script src="assets/wall.js"></script>
-      </div>
-    <div class="span2"></div>
-  </div>
+  <%= render 'main' %>
 <% else %>
   <div class="center hero-unit">
     <h1>Analyticsja</h1>
@@ -32,5 +15,6 @@
     <%= link_to "Sign in with Facebook", "/auth/facebook/" %>
     <%= link_to "Sign in with Twitter", "/auth/twitter/" %>
     <%= link_to "Sign in with Google", "/auth/google_oauth2/" %>
+    <%= link_to "Try it out!", trials_path %>
   </div>
 <% end %>

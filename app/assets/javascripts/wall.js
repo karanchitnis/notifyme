@@ -50,28 +50,41 @@ function addPostToPage(e) {
   $("#edit" + postIDstr).append(delhtml);
   $("#edit" + postIDstr).append(linkhtml);
 
+  $(".post").draggable({ containment: [ 176, 60, 690, 962 ] });
   $(".post").draggable().click(function(){
     if ($(this).is('.ui-draggable-dragging')) {
       return;
     }
     var postid = $(this).attr("id");
     $(".post").draggable( "option", "disabled", true );
-    $(".content").attr('contenteditable',true);
-    //console.log($(".content").html());
+    $(".content").attr('contenteditable',true);  
   });
 
   $(".content").blur(function(){
     var contentid = $(this).attr("id");
     contentid = contentid.substring(7);
+    var text = $("#content" + contentid).text();
+    $.ajax(
+      {
+        type:'POST',
+        url:'/ajax/results',
+        data: 'text=' + text
+        //  + '&contentid=' + contentid 
+      })
+
     $(".post").draggable( 'option', 'disabled', false);
     var contentid = $(this).attr('id');
     $(".content").attr('contenteditable',false);
+    console.log($(".content").html());
   });
 
   $(".delete").click(function(event){
-    var deleteid = $(this).attr("id");
-    deleteid = deleteid.substring(6);
-    $("#post" + deleteid).remove();
+    if (confirm('Are you sure you want to delete this post?'))
+    {
+      var deleteid = $(this).attr("id");
+      deleteid = deleteid.substring(6);
+      $("#post" + deleteid).remove();
+    }
   });
 
 /*
@@ -101,8 +114,8 @@ function addPostToPage(e) {
     });
 */
 
-  if (e.clientX < 144)
-    postattr.style.left = "180px";
+  if (e.clientX < 176)
+    postattr.style.left = "176px";
   else
     postattr.style.left = e.clientX + 'px';
   if (e.clientX < 60)

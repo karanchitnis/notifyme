@@ -1,5 +1,7 @@
 SampleApp::Application.routes.draw do
 
+  get "trials/show"
+
   resources :playlists do
     collection { post :sort }
   end
@@ -13,7 +15,7 @@ SampleApp::Application.routes.draw do
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
   resources :static_pages
-  resources :searches
+  resources :trials, :only => [:index]
 
   root to: 'static_pages#home'
 
@@ -31,5 +33,6 @@ SampleApp::Application.routes.draw do
   match "/signoutomni" => "sessions#destroyomni", as: :signoutomni
 
   post '/ajax/embed_link', to: 'links#embed'
+  post '/ajax/results', to: 'recommendations#results'
   
   end

@@ -24,6 +24,8 @@ gem 'acts_as_votable'
 gem 'koala'
 gem 'viddl-rb'
 gem 'font-awesome-rails'
+gem 'stanford-core-nlp'
+gem 'rjb'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

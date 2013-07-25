@@ -1,2 +1,2 @@
-<h1 id="user_name"><%= current_user.name %></h1>
+<h1 id="user_name"><%= current_user.name rescue "Anonymous" %></h1>
 <span><%#= link_to "view my profile", current_user %></span>

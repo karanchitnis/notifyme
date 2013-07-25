@@ -265,8 +265,8 @@ user-select: none;
 
 #wall {
   border:3px solid red;
-  width: 66.66666666666666%;
-  height: 2000px;
+  width: 46.66666666666666%;
+  height:1010px;
   position: relative;
   -webkit-user-select: none; /* Chrome/Safari */        
   -moz-user-select: none; /* Firefox */
@@ -313,15 +313,13 @@ user-select: none;
   min-height: 30px;
 }
 
-.span8 {
+.span4 {
   border:2px solid green;
-
 }
 
-.pad {
-  padding-left: 7.5px;
+.span1 {
+  border:2px solid green;
 }
-
 
 .icon-arrow-up {
   color: green;
@@ -420,8 +418,8 @@ user-select: none;
 
 /* ratio reduced for span2 */
 .row-fluid.no-space .span2 {
-  width: 13.666666666666664%;
-  *width: 13.59722222222222%;
+  width: 18.666666666666664%;
+  *width: 18.59722222222222%;
 }
 .row-fluid.no-space .span1 {
   width: 12.166666666666664%;

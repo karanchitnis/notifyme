@@ -1,0 +1,4 @@
+-> test-NN (root)
+  -> This-DT (nsubj)
+  -> is-VBZ (cop)
+  -> a-DT (det)
