@@ -26,6 +26,8 @@ gem 'viddl-rb'
 gem 'font-awesome-rails'
 gem 'stanford-core-nlp'
 gem 'rjb'
+gem 'google-search', git: "https://github.com/karanchitnis/google-search.git"
+gem 'rubytree'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
