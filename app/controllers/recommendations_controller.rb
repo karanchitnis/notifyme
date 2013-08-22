@@ -37,10 +37,8 @@ class RecommendationsController < ApplicationController
 			cur_node << Tree::TreeNode.new(line.split('>')[1].split('-')[0].split[0], line.split('>')[1].split('-')[1])
 			spaces = 0
 		end
-
-		#File.open('testing1.txt', 'w') { |f| f.write(root_node.print_tree) }
-		#File.open('testing2.txt', 'w') { |f| f.write(root_node.children) }
-		
+		@str_node = cur_node[0].name
+		File.open('testing1.txt', 'w') { |f| f.write(root_node.print_tree) }
 		respond_to do |format|
       		format.js
     	end

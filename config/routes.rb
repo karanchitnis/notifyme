@@ -12,6 +12,7 @@ SampleApp::Application.routes.draw do
     end
   end
   resources :sessions
+  resources :subscriptions, only: [:create, :destroy]
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
   resources :static_pages
@@ -34,5 +35,7 @@ SampleApp::Application.routes.draw do
 
   post '/ajax/embed_link', to: 'links#embed'
   post '/ajax/results', to: 'recommendations#results'
+
+  match '/del_sub:id', to: 'static_pages#del_sub', :as => :del_sub
   
   end

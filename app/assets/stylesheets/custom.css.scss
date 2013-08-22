@@ -263,20 +263,6 @@ aside {
 user-select: none;
 }
 
-#wall {
-  border:3px solid red;
-  width: 46.66666666666666%;
-  height:1010px;
-  position: relative;
-  -webkit-user-select: none; /* Chrome/Safari */        
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* IE10+ */
-
-  /* Rules below not implemented in browsers yet */
-  -o-user-select: none;
-  user-select: none; 
-}
-
 .no-contact-info {
     width: 400px;
 }
@@ -286,34 +272,7 @@ user-select: none;
   border:1px solid black;
 }
 
-.edit {
-  border:1px solid red;
-  position: relative;
-  width: 0px;
-  min-width: 100px;
-  min-height: 30px;
-}
-
-.content {
-  border:1px solid green;
-  padding:5px 5px;
-  position: relative;
-  width: 0px;
-  min-width: 100px;
-  min-height: 30px;
-  resize:both;
-  overflow: hidden;
-}
-
-.accessor {
-  border:1px solid blue;
-  position: relative;
-  width: 0px;
-  min-width: 100px;
-  min-height: 30px;
-}
-
-.span4 {
+.span10 {
   border:2px solid green;
 }
 

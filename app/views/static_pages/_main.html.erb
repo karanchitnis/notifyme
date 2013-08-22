@@ -1,14 +1,14 @@
 <div class="row-fluid no-space">
     <div class="span1" id="profile">
     	<%= render 'shared/user_info' %>
-    	<%= render 'shared/stats' %>
-    	<%= button_tag "B", :class => "bold" %>
-    	<%= button_tag "I", :class => "italic" %>
-    	<%= button_tag "U", :class => "underline" %>
-    	<%= button_tag "Add Post", :id => "addPost" %>
+    	<%#= render 'shared/stats' %>
+        <%= render 'subscription_form' %>
+        <div id="inter_subs">
+            <%= render 'interests' %>
+        </div>
     </div>
-    <div class="span8" id="wall">
+    <div class="span10">
     	<script src="assets/wall.js"></script>
 	</div>
-	<div class="span4" id="search_results"></div>
+	<!--div class="span4" id="search_results"></div-->
 </div>

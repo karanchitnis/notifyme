@@ -11,7 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130518102726) do
+ActiveRecord::Schema.define(:version => 20130822094713) do
+
+  create_table "interests", :force => true do |t|
+    t.string   "name"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "instagram"
+    t.string   "youtube"
+    t.string   "youtube_page"
+    t.string   "hulu"
+    t.string   "vine"
+    t.string   "linkedin"
+    t.string   "google"
+    t.string   "fan_site"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "microposts", :force => true do |t|
     t.string   "content"
@@ -21,6 +37,11 @@ ActiveRecord::Schema.define(:version => 20130518102726) do
   end
 
   add_index "microposts", ["user_id", "created_at"], :name => "index_microposts_on_user_id_and_created_at"
+
+  create_table "recommendations", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "relationships", :force => true do |t|
     t.integer  "follower_id"
@@ -37,6 +58,20 @@ ActiveRecord::Schema.define(:version => 20130518102726) do
     t.string   "from"
     t.string   "subject"
     t.text     "body"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "subscriptions", :force => true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "subscriptions", ["user_id", "created_at"], :name => "index_subscriptions_on_user_id_and_created_at"
+
+  create_table "trials", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
