@@ -11,7 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130822094713) do
+ActiveRecord::Schema.define(:version => 20130823023621) do
+
+  create_table "feeds", :force => true do |t|
+    t.string   "provider"
+    t.datetime "date"
+    t.boolean  "unread",          :default => true
+    t.string   "image"
+    t.string   "title"
+    t.string   "url"
+    t.text     "description"
+    t.integer  "subscription_id"
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+  end
+
+  add_index "feeds", ["subscription_id"], :name => "index_feeds_on_subscription_id"
 
   create_table "interests", :force => true do |t|
     t.string   "name"
