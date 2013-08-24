@@ -37,5 +37,6 @@ SampleApp::Application.routes.draw do
   post '/ajax/results', to: 'recommendations#results'
 
   match '/del_sub:id', to: 'static_pages#del_sub', :as => :del_sub
+  match '/feed_view:id', to: 'static_pages#feed_view', :as => :feed_view
   
   end

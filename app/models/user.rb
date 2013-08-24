@@ -38,6 +38,15 @@ class User < ActiveRecord::Base
     end
   end
 
+  def has_subscriptions?
+    subscriptions.where("id is not null").any?
+  end
+
+  def last_read_or_default_subscription
+    return nil unless has_subscriptions?
+    (subscriptions.where(last_seen: true).first) || subscriptions.first
+  end
+
   def following?(other_user)
     relationships.find_by_followed_id(other_user.id)
   end
@@ -48,10 +57,6 @@ class User < ActiveRecord::Base
 
   def unfollow!(other_user)
     relationships.find_by_followed_id(other_user.id).destroy
-  end
-
-  def feed
-    Micropost.from_users_followed_by(self)
   end
 
   def self.create_with_omniauth(auth)

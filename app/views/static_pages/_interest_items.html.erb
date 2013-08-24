@@ -1,12 +1,11 @@
 <div>
   <span class="interest">
     <% if interest_items.id %>
-      <%#= button_to subscription_button_title(website_items), feed_view_path(:id => website_items.id), id: "subscription_btn_#{website_items.id}", remote: :true %>
-      <%= link_to interest_items.name %>
+      <%= button_to subscription_button_title(interest_items), feed_view_path(:id => interest_items.id), :id => "subscription_btn_#{interest_items.id}", :remote => true %>
     <% end %>
     <% if current_user?(interest_items.user) and interest_items.id %>
       <div id="del_sub">
-        <%= link_to "delete", del_sub_path(:id => interest_items.id), remote: true %>
+        <%= link_to "delete", del_sub_path(:id => interest_items.id), :remote => true %>
       </div>
     <% end %>
     </br></br>
