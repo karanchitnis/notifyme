@@ -22,6 +22,19 @@ class Subscription < ActiveRecord::Base
     unread_feeds.where(:url => feed.url).any?
   end
 
+  def transfer_init_feeds init_feeds
+    for feed in init_feeds
+      title = feed[:title]
+      description = feed[:description]
+      date = feed[:date]
+      url = feed[:url] 
+      image = feed[:image]
+      provider = feed[:provider]
+      unread = true
+      self.feeds << Feed.new(:title => title, :description => description, :date => date, :url => url, :image => image, :provider => provider, :unread => unread)
+    end
+  end
+
   private
 
 #  def delete_oldest_feed

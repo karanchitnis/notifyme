@@ -5,7 +5,9 @@ class StaticPagesController < ApplicationController
       @subscription = current_user.subscriptions.build
       if current_user.has_subscriptions?
         @user_subscription = current_user.last_read_or_default_subscription
-        #@feed = Feedzirra::Feed.fetch_and_parse(@user_subscription.website).entries[0...Feed::MAX_COUNT]
+        @feed = update_feed(@user_subscription.name)
+        #File.open("testing.txt", 'w') {|f| f.write(@feed) }
+        
         #@user_subscription.add_unread_items @feed
       end
     end
@@ -39,6 +41,11 @@ class StaticPagesController < ApplicationController
   end
 
   def feed_view
+    if current_user.has_subscriptions?
+      @user_subscription = current_user.last_read_or_default_subscription
+      @feed = update_feed(@user_subscription.name)
+      #@user_subscription.add_unread_items @feed
+    end
     current_user.subscriptions.each {|item| item.update_attribute :last_seen, false}
     subscription = current_user.subscriptions.find(params[:id])
     subscription.update_attribute :last_seen, true

@@ -97,6 +97,8 @@ class SubscriptionsController < ApplicationController
 		# do fan_site (instagram api) last, waiting for API
 
 		#flash[:success] = "Subscription Added!"
+		init_feed = update_feed(@subscription.name)
+		@subscription.transfer_init_feeds(init_feed)
         redirect_to root_url
 	end
 

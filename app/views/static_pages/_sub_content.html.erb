@@ -1,17 +1,18 @@
 <% if @feed and @feed.any? %>
 	<% for item in @user_subscription.feeds %>
-    <% if item.is_read %>
-    		<div class="read_feed_item" id="<%= item.url %>">
+    <% if item.unread %>
+    		<!--<div class="unread_feed_item" id="<%= item.url %>">-->
+        <%= item.description %>
     <% else %>
-        <div class="unread_feed_item" id="<%= item.url %>">
+        <!--<div class="read_feed_item" id="<%= item.url %>">-->
+        <%= item[:description] %>
     <% end %>
 
           <!--<li>TITLE: <a href="<%#= item.url %>" title="<%#= item.title%>"><%#= item.title%></a></li>
           <li>AUTHOR: <%#= item.author %></li>
-          <li>SUMMARY: <%#= item.summary %></li>-->
-
-    <li>URL: <a href="<%= item.url %>" title="Click to read the article"><%= item.url%></a></li>
-    <li>PUBLISHED: <%= item.published %></li>
+          <li>SUMMARY: <%#= item.summary %></li>
+          <li>URL: <a href="<%#= item.url %>" title="Click to read the article"><%#= item.url%></a></li>
+          <li>PUBLISHED: <%#= item.published %></li>-->
     <br/><br/>
     <% end %>
     </div>
